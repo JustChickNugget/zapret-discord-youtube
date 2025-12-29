@@ -197,6 +197,8 @@ for %%f in (*.bat) do (
     )
 )
 
+echo 0. Return Back
+
 :: Choosing file
 set "choice="
 set /p "choice=Input file index (number): "
@@ -205,6 +207,8 @@ if "!choice!"=="" (
     pause
     goto menu
 )
+
+if "!choice!"=="0" goto menu
 
 set "selectedFile=!file%choice%!"
 if not defined selectedFile (
